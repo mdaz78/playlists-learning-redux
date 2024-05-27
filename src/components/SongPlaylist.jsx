@@ -1,10 +1,10 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { createRandomSong } from "../data";
 import { addSong } from "../store";
 
 function SongPlaylist() {
   const dispatch = useDispatch();
-  const songPlaylist = [];
+  const songPlaylist = useSelector((state) => state.songs);
 
   const handleSongAdd = (song) => {
     dispatch(addSong(song));
